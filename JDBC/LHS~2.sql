@@ -1,0 +1,2 @@
+SELECT * FROM NOTICE;
+commit;
