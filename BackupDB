@@ -1,0 +1,95 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 금요일-7월-10-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table COMMENT
+--------------------------------------------------------
+
+  CREATE TABLE "LHS"."COMMENT" 
+   (	"ID" NUMBER, 
+	"CONTENT" NVARCHAR2(2000), 
+	"REGDAE" TIMESTAMP (6), 
+	"WRITER_ID" NVARCHAR2(50), 
+	"NOTICE_ID" NUMBER
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "LHS_TABLESPACE" ;
+--------------------------------------------------------
+--  DDL for Table MEMBER
+--------------------------------------------------------
+
+  CREATE TABLE "LHS"."MEMBER" 
+   (	"ID" NVARCHAR2(50), 
+	"PWD" NVARCHAR2(50), 
+	"NAME" NVARCHAR2(50), 
+	"GENDER" NCHAR(2), 
+	"BIRTHDAY" CHAR(10 BYTE), 
+	"PHONE" CHAR(13 BYTE), 
+	"REGDATE" DATE, 
+	"EMAIL" VARCHAR2(200 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "LHS_TABLESPACE" ;
+--------------------------------------------------------
+--  DDL for Table MEMBER_ROLE
+--------------------------------------------------------
+
+  CREATE TABLE "LHS"."MEMBER_ROLE" 
+   (	"MEMBER_ID" NVARCHAR2(50), 
+	"ROLE_ID" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "LHS_TABLESPACE" ;
+--------------------------------------------------------
+--  DDL for Table NOTICE
+--------------------------------------------------------
+
+  CREATE TABLE "LHS"."NOTICE" 
+   (	"ID" NUMBER, 
+	"TITLE" NVARCHAR2(100), 
+	"WRITER_ID" NVARCHAR2(50), 
+	"CONTENT" CLOB, 
+	"REGDATE" TIMESTAMP (6), 
+	"HIT" NUMBER, 
+	"FILES" NVARCHAR2(100)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "LHS_TABLESPACE" 
+ LOB ("CONTENT") STORE AS SECUREFILE (
+  TABLESPACE "LHS_TABLESPACE" ENABLE STORAGE IN ROW CHUNK 8192
+  NOCACHE LOGGING  NOCOMPRESS  KEEP_DUPLICATES ) ;
+--------------------------------------------------------
+--  DDL for Table ROLE
+--------------------------------------------------------
+
+  CREATE TABLE "LHS"."ROLE" 
+   (	"ID" VARCHAR2(50 BYTE), 
+	"DISCRIPTION" NVARCHAR2(500)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "LHS_TABLESPACE" ;
+REM INSERTING into LHS."COMMENT"
+SET DEFINE OFF;
+REM INSERTING into LHS.MEMBER
+SET DEFINE OFF;
+REM INSERTING into LHS.MEMBER_ROLE
+SET DEFINE OFF;
+REM INSERTING into LHS.NOTICE
+SET DEFINE OFF;
+REM INSERTING into LHS.ROLE
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index SYS_IL0000073396C00004$$
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LHS"."SYS_IL0000073396C00004$$" ON "LHS"."NOTICE" (
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE( INITIAL 65536 NEXT 1048576 MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "LHS_TABLESPACE" 
+  PARALLEL (DEGREE 0 INSTANCES 0) ;

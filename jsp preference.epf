@@ -1,0 +1,17 @@
+#Mon Jul 13 02:25:38 KST 2020
+\!/=
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform=14
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance=14
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.release=enabled
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source=14
+/instance/org.eclipse.jdt.launching/org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1594039528045" defaultVMConnector\="">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1594039528045" name\="jdk-14.0.1" path\="C\:\\Program Files\\Java\\jdk-14.0.1"/>\r\n    </vmType>\r\n</vmSettings>\r\n
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.formatterprofiles.version=19
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands>\r\n<keyBinding contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+Y"/>\r\n<keyBinding commandId\="org.eclipse.ui.edit.redo" contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SHIFT+Z"/>\r\n</org.eclipse.ui.commands>
+@org.eclipse.jdt.core=3.22.0.v20200530-2032
+@org.eclipse.jdt.launching=3.17.100.v20200526-1503
+@org.eclipse.jdt.ui=3.21.100.v20200602-0959
+@org.eclipse.ui.workbench=3.119.0.v20200521-1247
+file_export_version=3.0
