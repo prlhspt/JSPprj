@@ -186,12 +186,11 @@
 					
 					<c:forEach var="n" items="${list}" varStatus="st">
 					<tr>
-					<td>${n.id}</td>
-					<td class = "title indent text-align-left"><a href="detail?id=${n.id}">${n.title}</a><span style="color:red;"> [${n.cmtCount}]</span></td>
-					<td>${n.writerId}</td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}"/></td>
-					<td>${n.hit}</td>
-					
+						<td>${n.id}</td>
+						<td class = "title indent text-align-left"><a href="detail?id=${n.id}">${n.title}</a><span style="color:red;"> [${n.cmtCount}]</span></td>
+						<td>${n.writerId}</td>
+						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${n.regDate}"/></td>
+						<td>${n.hit}</td>
 					</tr>
 					</c:forEach>
 					
