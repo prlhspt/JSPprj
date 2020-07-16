@@ -180,7 +180,7 @@
                     </div>
                     <div class="margin-top text-align-center">
                         <input class="btn-text btn-default" type="submit" value="등록" />
-                        <a class="btn-text btn-cancel" href="list.html">취소</a>
+                        <a class="btn-text btn-cancel" href="list.jsp">취소</a>
                     </div>
                 </form>
 

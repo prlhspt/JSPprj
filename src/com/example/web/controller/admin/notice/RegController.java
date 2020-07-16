@@ -69,7 +69,7 @@ public class RegController extends HttpServlet{
 				path.mkdirs();
 			
 			
-			// 파일 이름 중복일시 ..(1).jpg, ..(2).jpg 식으로 저장되게 하기 위치	
+			// 파일 이름 중복일시 ..(1).jpg, ..(2).jpg 식으로 저장되게 하기 만들기 위치	
 			String filePath = realPath + File.separator + fileName;
 			FileOutputStream fos = new FileOutputStream(filePath);
 			
@@ -82,7 +82,7 @@ public class RegController extends HttpServlet{
 			fis.close();
 	}
 		
-		// 파일 없이도 업로드 되게 하기 위치
+		// 파일 없이도 업로드 되게 하기 만들어야할 위치
 		builder.delete(builder.length()-1, builder.length());
 		
 		boolean pub = false;
