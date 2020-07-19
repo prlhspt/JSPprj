@@ -61,7 +61,7 @@ public class RegController extends HttpServlet{
 			
 			InputStream fis = filePart.getInputStream();
 			
-			String realPath = request.getServletContext().getRealPath("/upload");
+			String realPath = request.getServletContext().getRealPath("/member/upload");
 			System.out.println(realPath);
 			
 			File path = new File(realPath);
@@ -83,6 +83,7 @@ public class RegController extends HttpServlet{
 	}
 		
 		// 파일 없이도 업로드 되게 하기 만들어야할 위치
+		// builder.length-1	부터 builder.length까지 문자 삭제(쉼표)
 		builder.delete(builder.length()-1, builder.length());
 		
 		boolean pub = false;
@@ -92,7 +93,7 @@ public class RegController extends HttpServlet{
 		Notice notice = new Notice();
 		notice.setTitle(title);
 		notice.setContent(content);
-		notice.setPub(pub);
+		notice.setPub(pub);  
 		notice.setWriterId("newlec");
 		notice.setFiles(builder.toString());
 		

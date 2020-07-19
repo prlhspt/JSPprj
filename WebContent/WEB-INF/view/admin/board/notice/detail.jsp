@@ -21,7 +21,7 @@
 
             background: url("/images/mypage/visual.png") no-repeat center;
         }
-    </style>
+    </style>  
 </head>
 
 <body>

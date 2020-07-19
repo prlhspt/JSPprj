@@ -147,12 +147,14 @@
 						<form class="table-form">
 							<fieldset>
 								<legend class="hidden">공지사항 검색 필드</legend>
-								<label class="hidden">검색분류</label> <select name="f">
+								<label class="hidden">검색분류</label> 
+								<select name="f">
 									<option value="title">제목</option>
 									<option value="writerId">작성자</option>
-								</select> <label class="hidden">검색어</label> <input type="text" name="q"
-									value="" /> <input class="btn btn-search" type="submit"
-									value="검색" />
+								</select> 
+								<label class="hidden">검색어</label> 
+								<input type="text" name="q"	value="" />
+									 <input class="btn btn-search" type="submit" value="검색" />
 							</fieldset>
 						</form>
 					</div>
@@ -176,25 +178,25 @@
 
 								<c:forEach var="n" items="${list}" varStatus="st">
 									<c:set var = "open" value="" />
-									<c:if test="${n.pub}">
-										<c:set var="open" value="checked" />
-									</c:if>
-										<tr>
-											<td>${n.id}</td>
-											<td class="title indent text-align-left"><a
-												href="detail?id=${n.id}">${n.title}</a><span
-												style="color: red;"> [${n.cmtCount}]</span></td>
-											<td>${n.writerId}</td>
-											<td><fmt:formatDate pattern="yyyy-MM-dd"
-													value="${n.regDate}" /></td>
-											<td>${n.hit}</td>
-											<td><input type="checkbox" name="open-id" ${open} value="${n.id}"></td>
-											<td><input type="checkbox" name="del-id" value="${n.id }"></td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
+										<c:if test="${n.pub}">
+											<c:set var="open" value="checked" />
+										</c:if>
+											<tr>
+												<td>${n.id}</td>
+												<td class="title indent text-align-left"><a
+													href="detail?id=${n.id}">${n.title}</a><span
+													style="color: red;"> [${n.cmtCount}]</span></td>
+												<td>${n.writerId}</td>
+												<td><fmt:formatDate pattern="yyyy-MM-dd"
+														value="${n.regDate}" /></td>
+												<td>${n.hit}</td>
+												<td><input type="checkbox" name="open-id" ${open} value="${n.id}"></td>
+												<td><input type="checkbox" name="del-id" value="${n.id }"></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
 
 					<c:set var="page" value="${empty param.p?1:param.p}" />
 					<c:set var="startNum" value="${page-(page-1)%5}" />
@@ -213,7 +215,7 @@
 					
 					<c:set var="ids" value="" />
 					<c:forEach var="n" items="${list}">
-					<c:set var="ids" value="${ids} ${n.id} " />
+					<c:set var="ids" value="${ids} ${n.id}" />
 					</c:forEach>
 						<input type="hidden" name="ids" value="${ids}" />
 						<input type="submit" class="btn-text btn-default" name="cmd" value="일괄공개"> 

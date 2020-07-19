@@ -1,14 +1,8 @@
 package com.example.web.controller.admin.notice;
 
-import java.io.Console;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -17,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.example.web.entity.Notice;
 import com.example.web.entity.NoticeView;
 import com.example.web.service.NoticeService;
 
@@ -27,12 +20,12 @@ public class ListController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String[] openIds = request.getParameterValues("open-id");
+		String[] openIds = request.getParameterValues("open-id");//3,5,8
 		String[] delIds = request.getParameterValues("del-id");
 		String cmd = request.getParameter("cmd");
 		String ids_ = request.getParameter("ids");
-		String[] ids = ids_.split(" ");
-
+		String[] ids = ids_.trim().split(" ");// 1,2,3,4,5,6,7,8,9,10
+		
 		NoticeService service = new NoticeService();
 		
 		switch (cmd) {
@@ -40,10 +33,17 @@ public class ListController extends HttpServlet {
 			for (String openId : openIds)
 				System.out.printf("open id : %s\n", openId);
 			
-			for(int i=0; i<ids.length; i++) {
-				// 1. 현재 id가 open 된 상태냐
-				
-			}
+			List<String> oids = Arrays.asList(openIds);
+			// 1,2,3,4,5,6,7,8,9,10 - //3,5,8
+			List<String> cids = new ArrayList(Arrays.asList(ids));
+			cids.removeAll(oids);
+			System.out.println(Arrays.asList(ids));
+			System.out.println(oids);
+			System.out.println(cids);
+			
+			// Transaction 처리
+			service.pubNoticeAll(oids, cids); // UPDATE NOTICE SET PUB = 1 WHERE ID IN (...);
+			
 			
 			break;
 		case "일괄삭제":
